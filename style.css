@@ -7,7 +7,24 @@ body {
     background-color: #333;
 }
 
-.navbar-item h1 {
+.navbar-item {
     margin-left: 20px;
     color: white;
+}
+
+.sidenav {
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    left: 0;
+    background-color: rgb(235, 233, 233);
+}
+
+.sidenav a {
+    margin: 20px;
+    text-decoration: none;
+}
+
+.sidenav h3 {
+    margin: 20px;
 }
