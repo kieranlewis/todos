@@ -1,0 +1,23 @@
+{
+  "name": "todos",
+  "version": "1.0.0",
+  "description": "A to do list where you can add 'todos' to projects and save them within your own pc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kieranlewis/todos.git"
+  },
+  "author": "Kieran Lewis; kieranlewis1334@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kieranlewis/todos/issues"
+  },
+  "homepage": "https://github.com/kieranlewis/todos#readme",
+  "devDependencies": {
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1"
+  }
+}
