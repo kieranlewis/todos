@@ -1,5 +1,6 @@
  import Project from './Project';
+ import Task from './Task';
  
  //Dummy Project
-const today = Project('Today', 'Initial project', new Date(), 5);
+const today = Project('Today');
 console.log(today);
