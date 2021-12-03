@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navbar-item h1 {
+    margin-left: 20px;
+    color: white;
+}
