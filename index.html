@@ -15,7 +15,17 @@
         <h3>Projects</h3>
         <a href="">Today</a>
         <div class="project-list"></div>
-        <a href="">+ Add Project</button>
+        <button class="add-project-btn">+ Add Project</button>
+    </div>
+    <div id="form-container" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form class="project-form">
+                <label for="projectName">Project Name: </label>
+                <input type="text" name="projectName" id="projectName">
+                <button id="submit-btn">Submit</button>
+            </form>
+        </div> 
     </div>
     <script src="main.js"></script>
 </body>
