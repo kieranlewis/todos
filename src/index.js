@@ -5,8 +5,9 @@
  //Dummy Project
 const today = Project('Today');
 const project1 = Project('Create To Do List');
-const projectList = [today, project1];
-console.log(projectList);
+const project2 = Project('Pickup shopping')
+const projectList = [today, project1, project2];
 
 UI.displayProject(today);
+UI.displayProjectList(projectList);
 

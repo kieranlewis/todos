@@ -22,6 +22,22 @@ export const displayProject = (project) => {
     }
 }
 
+export const displayProjectList = (projectList) => {
+    const projectListDiv = document.querySelector('.project-list');
+    
+    for(let i = 0; i < projectList.length; i++) {
+        const link = document.createElement('a');
+        link.innerText = projectList[i].title;
+        link.href = '';
+        link.classList.add('project-link');
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            displayProject(projectList[i]);
+        });
+        projectListDiv.appendChild(link);
+    }
+}
+
 // event listeners
 addProjectButton.addEventListener('click', openForm);
 span.addEventListener('click', closeForm);
