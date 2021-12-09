@@ -71,7 +71,7 @@ body {
     cursor: pointer;
 }
 
-.add-project-btn {
+#add-project-btn {
     font-size: 14px;
     margin: 0 0 20px 20px;
     border: none;
