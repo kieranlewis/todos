@@ -16,13 +16,16 @@ body {
     height: 100%;
     width: 20%;
     position: fixed;
+    z-index: 1;
     left: 0;
     background-color: rgb(235, 233, 233);
+    overflow-y: hidden;
 }
 
 .sidenav a {
-    margin: 20px;
+    margin: 20px 0 20px 20px ;
     text-decoration: none;
+    display: block;
 }
 
 .sidenav h3 {
