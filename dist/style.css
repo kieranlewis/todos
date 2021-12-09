@@ -23,8 +23,11 @@ body {
 }
 
 .sidenav a {
-    margin: 20px 0 20px 20px ;
+    margin: 20px 0 20px 20px;
     text-decoration: none;
+    font-family: arial, sans-serif;
+    font-size: 14px;
+    color: #069;
     display: block;
 }
 
@@ -68,4 +71,13 @@ body {
     cursor: pointer;
 }
 
+.add-project-btn {
+    font-size: 14px;
+    margin: 0 0 20px 20px;
+    border: none;
+    font-family: arial, sans-serif;
+    padding: 0!important;
+    cursor: pointer;
+    color: #069;
+}
 
