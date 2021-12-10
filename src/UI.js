@@ -48,37 +48,23 @@ const displayTask = (task, ul) => {
 }
 
 export const displayProject = (project) => {
-    const h2 = document.createElement('h2');
-    const button = document.createElement('button');
-    const text = document.createElement('p');
-
-    h2.innerText = project.title;
-    button.innerText = '+Add Task';
-
-    button.classList.add('add-task-btn');
-
-    button.addEventListener('click', addTask);
-
-    container.innerHTML = '';
-    container.appendChild(h2);
-
     if(project.tasks.length === 0) {
-        text.innerText = 'No Tasks';
-        container.appendChild(text);  
+        container.innerHTML = 
+            `<h2>${project.title}</h2>
+            <p>No Tasks</p>
+            <button class="add-task-btn">+Add Task</button>`;
     } else {
-        const taskDiv = document.createElement('div');
-        const ul = document.createElement('ul');
-
-        taskDiv.classList.add('task-div');
-    
-        container.appendChild(taskDiv);
-        taskDiv.appendChild(ul);
+        container.innerHTML = 
+            `<h2>${project.title}</h2>
+            <p>There are tasks</p>
+            <button class="add-task-btn">+Add Task</button>`;
 
         // loop through all tasks and display them on page
         for(let i = 0; i < project.tasks.length; i++) displayTask(project.tasks[i], ul);
     }
 
-    container.appendChild(button);
+    const button = container.querySelector('.add-task-btn');
+    button.addEventListener('click', addTask);
 }
 
 export const displayProjectList = (projectList) => {
