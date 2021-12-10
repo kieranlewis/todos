@@ -6,6 +6,12 @@ const addProjectButton = document.querySelector('#add-project-btn');
 const span = document.querySelector('.close');
 const submitButton = document.querySelector('#submit-btn');
 
+//Dummy Project
+const today = Project('Today');
+const project1 = Project('Create To Do List');
+const project2 = Project('Pickup shopping');
+const projectList = ProjectList([today, project1, project2]);
+
 const openForm = () => {
     projectForm.style.display = 'block';
 }
@@ -20,7 +26,7 @@ const submitForm = () => {
     const newProject = Project(input.value);
 
     console.log(newProject);
-    //ProjectList.addProject(newProject);
+    projectList.addProject(newProject);
     closeForm();
 }
 
@@ -38,6 +44,8 @@ export const displayProject = (project) => {
 export const displayProjectList = (projectList) => {
     const projects = projectList.projects;
     const projectListDiv = document.querySelector('.project-list');
+
+    projectListDiv.innerHTML = '';
     
     for(let i = 0; i < projects.length; i++) {
         const link = document.createElement('a');
@@ -52,10 +60,16 @@ export const displayProjectList = (projectList) => {
     }
 }
 
+export const init = () => {
+    displayProject(projectList.projects[0]);
+    displayProjectList(projectList);
+}
+
 // event listeners
 addProjectButton.addEventListener('click', openForm);
 span.addEventListener('click', closeForm);
 submitButton.addEventListener('click', (e) => {
     e.preventDefault();
     submitForm();
+    displayProjectList(projectList);
 });
