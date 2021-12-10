@@ -1,3 +1,6 @@
+import Project from './Project';
+import ProjectList from './ProjectList';
+
 const projectForm = document.querySelector('#form-container');
 const addProjectButton = document.querySelector('#add-project-btn');
 const span = document.querySelector('.close');
@@ -14,9 +17,10 @@ const closeForm = () => {
 
 const submitForm = () => {
     const input = document.querySelector('#projectName');
-    console.log(input.value);
-    console.log('You are trying to submit');
+    const newProject = Project(input.value);
 
+    console.log(newProject);
+    //ProjectList.addProject(newProject);
     closeForm();
 }
 
@@ -24,7 +28,7 @@ export const displayProject = (project) => {
     const container = document.querySelector('.container');
     container.innerHTML = `<h2>${project.title}</h2>`;
 
-    if(project.tasks === undefined) {
+    if(project.tasks.length === 0) {
         container.innerHTML += '<p>No Tasks</p>';
     } else {
         // loop through all tasks and display them on page

@@ -12,3 +12,4 @@ const projectList = ProjectList([today, project1, project2]);
 UI.displayProject(today);
 UI.displayProjectList(projectList);
 
+
