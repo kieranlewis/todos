@@ -41,7 +41,7 @@ export const displayProject = (project) => {
     let text = '';
 
     h2.innerText = project.title;
-    button.innerText = 'Add Task';
+    button.innerText = '+Add Task';
 
     button.classList.add('add-task-btn');
     button.addEventListener('click', addTask);
