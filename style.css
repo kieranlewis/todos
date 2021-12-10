@@ -81,6 +81,16 @@ body {
     color: #069;
 }
 
+.add-task-btn {
+    font-size: 14px;
+    border: none;
+    font-family: arial, sans-serif;
+    padding: 0!important;
+    cursor: pointer;
+    color: #069;
+    background-color: white;
+}
+
 .container { 
     margin-left: 200px;
 }
