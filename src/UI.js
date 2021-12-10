@@ -40,11 +40,9 @@ const addTask = () => {
     console.log('You are clicking a button');
 }
 
-const displayTask = (task, ul) => {
-    const li = document.createElement('li');
-    li.innerText = task.title;
-
-    ul.appendChild(li);
+const displayTasks = (tasks) => {
+    const taskDiv = container.querySelector('.task-div');
+    taskDiv.innerHTML = `<p>There are tasks</p>`;
 }
 
 export const displayProject = (project) => {
@@ -56,11 +54,10 @@ export const displayProject = (project) => {
     } else {
         container.innerHTML = 
             `<h2>${project.title}</h2>
-            <p>There are tasks</p>
+            <div class="task-div"></div>
             <button class="add-task-btn">+Add Task</button>`;
 
-        // loop through all tasks and display them on page
-        for(let i = 0; i < project.tasks.length; i++) displayTask(project.tasks[i], ul);
+        displayTasks(project.tasks);
     }
 
     const button = container.querySelector('.add-task-btn');
