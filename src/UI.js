@@ -30,15 +30,33 @@ const submitForm = () => {
     closeForm();
 }
 
+const addTask = () => {
+    console.log('You are clicking a button');
+}
+
 export const displayProject = (project) => {
     const container = document.querySelector('.container');
-    container.innerHTML = `<h2>${project.title}</h2>`;
+    const h2 = document.createElement('h2');
+    const button = document.createElement('button');
+    let text = '';
+
+    h2.innerText = project.title;
+    button.innerText = 'Add Task';
+
+    button.classList.add('add-task-btn');
+    button.addEventListener('click', addTask);
 
     if(project.tasks.length === 0) {
-        container.innerHTML += '<p>No Tasks</p>';
+        text = document.createElement('p');
+        text.innerText = 'No Tasks';
     } else {
         // loop through all tasks and display them on page
     }
+
+    container.innerHTML = '';
+    container.appendChild(h2);
+    container.appendChild(text);
+    container.appendChild(button);
 }
 
 export const displayProjectList = (projectList) => {

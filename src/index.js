@@ -1,6 +1,3 @@
- import Project from './Project';
- import Task from './Task';
- import * as UI from './UI';
- import ProjectList from './ProjectList';
+import * as UI from './UI';
 
 UI.init();
