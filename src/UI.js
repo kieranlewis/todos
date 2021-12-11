@@ -59,8 +59,6 @@ const submitTaskForm = () => {
     currentProject.addTask(newTask);
 
     closeTaskForm();
-    console.log(newTask);
-    console.log(currentProject);
 }
 
 const displayTasks = (tasks) => {
@@ -87,9 +85,17 @@ const displayTasks = (tasks) => {
         const td2 = document.createElement('td');
         td1.innerText = task.title;
         td2.innerText = task.dueDate;
-    
+
+        const deleteButton = document.createElement('button');
+        deleteButton.innerText = 'Delete';
+        deleteButton.addEventListener('click', () => {
+            currentProject.deleteTask(i);
+            displayProject(currentProject);
+        });
+        
         tr.appendChild(td1);
         tr.appendChild(td2);
+        tr.appendChild(deleteButton);
         table.appendChild(tr);
     }
 
