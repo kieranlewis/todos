@@ -8,6 +8,7 @@ const addProjectButton = document.querySelector('#add-project-btn');
 const span = document.querySelector('.close');
 const taskSpan = document.querySelector('.task-close');
 const submitButton = document.querySelector('#submit-btn');
+const submitTaskButton = document.querySelector('#submit-task-btn');
 const container = document.querySelector('.container');
 
 //Dummy Project
@@ -48,11 +49,13 @@ const submitForm = () => {
 }
 
 const submitTaskForm = () => {
+    const title = document.querySelector('#taskName');
+    const dueDate = document.querySelector('#dueDate');
+    const priority = document.querySelector('#priority');
+    const newTask = Task(title.value, dueDate.value, priority.value);
 
-}
-
-const addTask = () => {
-    console.log('You are clicking a button');
+    closeTaskForm();
+    console.log(newTask);
 }
 
 const displayTasks = (tasks) => {
@@ -139,3 +142,7 @@ submitButton.addEventListener('click', (e) => {
     submitForm();
     displayProjectList(projectList);
 });
+submitTaskButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    submitTaskForm();
+})
