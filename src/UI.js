@@ -153,4 +153,5 @@ submitButton.addEventListener('click', (e) => {
 submitTaskButton.addEventListener('click', (e) => {
     e.preventDefault();
     submitTaskForm();
+    displayProject(currentProject);
 })
