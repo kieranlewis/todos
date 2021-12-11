@@ -21,6 +21,8 @@ const task2 = Task('Drive to supermarket', new Date(), 1);
 project2.addTask(task1);
 project2.addTask(task2);
 
+let currentProject = projectList.projects[0];
+
 const openForm = () => {
     projectForm.style.display = 'block';
 }
@@ -54,13 +56,17 @@ const submitTaskForm = () => {
     const priority = document.querySelector('#priority');
     const newTask = Task(title.value, dueDate.value, priority.value);
 
+    currentProject.addTask(newTask);
+
     closeTaskForm();
     console.log(newTask);
+    console.log(currentProject);
 }
 
 const displayTasks = (tasks) => {
     const taskDiv = container.querySelector('.task-div');
     const table = document.createElement('table');
+
     
     // create header for table
     const tr = document.createElement('tr');
@@ -91,6 +97,8 @@ const displayTasks = (tasks) => {
 }
 
 export const displayProject = (project) => {
+    currentProject = project;
+
     if(project.tasks.length === 0) {
         container.innerHTML = 
             `<h2>${project.title}</h2>
