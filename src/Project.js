@@ -1,5 +1,3 @@
-import Task from './Task';
-
 const Project = (title, tasks = []) => {
     const addTask = (task) => tasks.push(task);
     const deleteTask = (index) => {
