@@ -3,8 +3,10 @@ import ProjectList from './ProjectList';
 import Task from './Task';
 
 const projectForm = document.querySelector('#form-container');
+const taskForm = document.querySelector('#task-container');
 const addProjectButton = document.querySelector('#add-project-btn');
 const span = document.querySelector('.close');
+const taskSpan = document.querySelector('.task-close');
 const submitButton = document.querySelector('#submit-btn');
 const container = document.querySelector('.container');
 
@@ -13,8 +15,8 @@ const today = Project('Today');
 const project1 = Project('Create To Do List');
 const project2 = Project('Pickup shopping');
 const projectList = ProjectList([today, project1, project2]);
-const task1 = Task('Fill Car', 'Go to the petrol station to fill up the car', new Date(), 3);
-const task2 = Task('Drive to supermarket', '', new Date(), 1);
+const task1 = Task('Fill Car', new Date(), 3);
+const task2 = Task('Drive to supermarket', new Date(), 1);
 project2.addTask(task1);
 project2.addTask(task2);
 
@@ -27,6 +29,15 @@ const closeForm = () => {
     projectForm.style.display = 'none'
 }
 
+const openTaskForm = () => {
+    taskForm.style.display = 'block';
+}
+
+const closeTaskForm = () => {
+    document.querySelector('.task-form').reset();
+    taskForm.style.display = 'none';
+}
+
 const submitForm = () => {
     const input = document.querySelector('#projectName');
     const newProject = Project(input.value);
@@ -34,6 +45,10 @@ const submitForm = () => {
     console.log(newProject);
     projectList.addProject(newProject);
     closeForm();
+}
+
+const submitTaskForm = () => {
+
 }
 
 const addTask = () => {
@@ -88,7 +103,7 @@ export const displayProject = (project) => {
     }
 
     const button = container.querySelector('.add-task-btn');
-    button.addEventListener('click', addTask);
+    button.addEventListener('click', openTaskForm);
 }
 
 export const displayProjectList = (projectList) => {
@@ -118,6 +133,7 @@ export const init = () => {
 // event listeners
 addProjectButton.addEventListener('click', openForm);
 span.addEventListener('click', closeForm);
+taskSpan.addEventListener('click', closeTaskForm);
 submitButton.addEventListener('click', (e) => {
     e.preventDefault();
     submitForm();

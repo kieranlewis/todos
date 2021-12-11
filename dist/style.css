@@ -57,7 +57,7 @@ body {
     width: 80%;
 }
 
-.close {
+.close, .task-close {
     font-size: 28px;
     font-weight: bold;
     color: #aaaa;
@@ -65,7 +65,9 @@ body {
 }
 
 .close:hover,
-.close:focus {
+.close:focus,
+.task-close:hover,
+.task-close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
