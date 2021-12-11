@@ -42,7 +42,34 @@ const addTask = () => {
 
 const displayTasks = (tasks) => {
     const taskDiv = container.querySelector('.task-div');
-    taskDiv.innerHTML = `<p>There are tasks</p>`;
+    const table = document.createElement('table');
+    
+    // create header for table
+    const tr = document.createElement('tr');
+    const th1 = document.createElement('th');
+    const th2 = document.createElement('th');
+    th1.innerText = 'Title';
+    th2.innerText = 'Due Date';
+
+    tr.appendChild(th1);
+    tr.appendChild(th2);
+    table.appendChild(tr);
+    
+    // create data for table with task information
+    for(let i = 0; i < tasks.length; i++) {
+        const task = tasks[i];
+        const tr = document.createElement('tr');
+        const td1 = document.createElement('td');
+        const td2 = document.createElement('td');
+        td1.innerText = task.title;
+        td2.innerText = task.dueDate;
+    
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        table.appendChild(tr);
+    }
+
+    taskDiv.appendChild(table);
 }
 
 export const displayProject = (project) => {
