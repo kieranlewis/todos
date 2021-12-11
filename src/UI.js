@@ -85,6 +85,9 @@ const displayTasks = (tasks) => {
         const td2 = document.createElement('td');
         td1.innerText = task.title;
         td2.innerText = task.dueDate;
+        td1.setAttribute('contentEditable', 'true');
+        td2.setAttribute('contentEditable', 'true');
+        td1.addEventListener('keyup', () => currentProject.editTaskTitle(td1.innerText, i));
 
         const deleteButton = document.createElement('button');
         deleteButton.innerText = 'Delete';
