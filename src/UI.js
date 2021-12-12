@@ -54,7 +54,7 @@ const submitForm = () => {
 const submitTaskForm = () => {
     const title = document.querySelector('#taskName');
     const dueDate = document.querySelector('#dueDate');
-    const priority = document.querySelector('#priority');
+    const priority = document.querySelector('input[name="priority"]:checked');
     const newTask = Task(title.value, dueDate.value, priority.value);
 
     currentProject.addTask(newTask);
