@@ -37,8 +37,15 @@
                 <input type="text" name="taskName" id="taskName">
                 <label for="dueDate">Due Date: </label>
                 <input type="text" name="dueDate" id="dueDate">
-                <label for="priority">Priority: </label>
-                <input type="text" name="priority" id="priority">
+                <div>
+                    <label for="priority">Priority: </label>
+                    <input type="radio" name="priority" id="priorityChoice1" value="1" checked>
+                    <label for="priorityChoice1">1</label>
+                    <input type="radio" name="priority" id="priorityChoice2" value="2">
+                    <label for="priorityChoice2">2</label>
+                    <input type="radio" name="priority" id="priorityChoice3" value="3">
+                    <label for="priorityChoice3">3</label>
+                </div>
                 <button id="submit-task-btn">Submit</button>
             </form>
         </div> 
