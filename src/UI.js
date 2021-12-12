@@ -1,6 +1,7 @@
 import Project from './Project';
 import ProjectList from './ProjectList';
 import Task from './Task';
+import { format } from 'date-fns';
 
 const projectForm = document.querySelector('#form-container');
 const taskForm = document.querySelector('#task-container');
@@ -16,8 +17,8 @@ const today = Project('Today');
 const project1 = Project('Create To Do List');
 const project2 = Project('Pickup shopping');
 const projectList = ProjectList([today, project1, project2]);
-const task1 = Task('Fill Car', new Date(), 3);
-const task2 = Task('Drive to supermarket', new Date(), 1);
+const task1 = Task('Fill Car', format(new Date(), 'dd-MM-yyyy'), 3);
+const task2 = Task('Drive to supermarket', format(new Date(), 'dd-MM-yyyy'), 1);
 project2.addTask(task1);
 project2.addTask(task2);
 
