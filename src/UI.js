@@ -1,7 +1,7 @@
 import Project from './Project';
 import ProjectList from './ProjectList';
 import Task from './Task';
-import { format } from 'date-fns';
+import { format, isValid } from 'date-fns';
 
 const projectForm = document.querySelector('#form-container');
 const taskForm = document.querySelector('#task-container');
@@ -90,6 +90,10 @@ const displayTasks = (tasks) => {
         td1.setAttribute('contentEditable', 'true');
         td2.setAttribute('contentEditable', 'true');
         td1.addEventListener('keyup', () => currentProject.editTaskTitle(td1.innerText, i));
+        td2.addEventListener('focusout', () => {
+            console.log(td2.innerText);
+            currentProject.editTaskDate(td2.innerText, i);
+        });
 
         const deleteButton = document.createElement('button');
         deleteButton.innerText = 'Delete';
