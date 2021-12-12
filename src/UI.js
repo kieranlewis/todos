@@ -72,11 +72,15 @@ const displayTasks = (tasks) => {
     const tr = document.createElement('tr');
     const th1 = document.createElement('th');
     const th2 = document.createElement('th');
+    const th3 = document.createElement('th');
+
     th1.innerText = 'Title';
-    th2.innerText = 'Due Date';
+    th2.innerText = 'Due Date (dd-mm-yyyy)';
+    th3.innerText = 'Priority'
 
     tr.appendChild(th1);
     tr.appendChild(th2);
+    tr.appendChild(th3);
     table.appendChild(tr);
     
     // create data for table with task information
@@ -85,13 +89,21 @@ const displayTasks = (tasks) => {
         const tr = document.createElement('tr');
         const td1 = document.createElement('td');
         const td2 = document.createElement('td');
+        const td3 = document.createElement('td');
+
         td1.innerText = task.title;
-        td2.innerText = task.dueDate;
+        td2.innerText = task.dueDate; 
+        //td3.innerHTML = '<span class="dot green"></span>';
+        
+        if(task.priority == 1) td3.innerHTML = '<span class="dot red"></span>';
+        else if(task.priority == 2) td3.innerHTML = '<span class="dot orange"></span>';
+        else td3.innerHTML = '<span class="dot green"></span>';
+
         td1.setAttribute('contentEditable', 'true');
         td2.setAttribute('contentEditable', 'true');
-        td1.addEventListener('keyup', () => currentProject.editTaskTitle(td1.innerText, i));
+
+        td1.addEventListener('focusout', () => currentProject.editTaskTitle(td1.innerText, i));
         td2.addEventListener('focusout', () => {
-            console.log(td2.innerText);
             currentProject.editTaskDate(td2.innerText, i);
         });
 
@@ -104,6 +116,7 @@ const displayTasks = (tasks) => {
         
         tr.appendChild(td1);
         tr.appendChild(td2);
+        tr.appendChild(td3)
         tr.appendChild(deleteButton);
         table.appendChild(tr);
     }

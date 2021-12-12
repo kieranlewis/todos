@@ -1,6 +1,3 @@
-import { parse, isValid, format } from 'date-fns';
-import { enGB } from 'date-fns/locale';
-
 const Project = (title, tasks = []) => {
     const addTask = (task) => tasks.push(task);
     const deleteTask = (index) => {
