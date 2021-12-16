@@ -101,6 +101,8 @@ const displayTasks = (tasks) => {
 
         td1.setAttribute('contentEditable', 'true');
         td2.setAttribute('contentEditable', 'true');
+        td2.style.textAlign = 'center';
+        td3.style.textAlign = 'center';
 
         td1.addEventListener('focusout', () => currentProject.editTaskTitle(td1.innerText, i));
         td2.addEventListener('focusout', () => {
