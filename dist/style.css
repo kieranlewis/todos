@@ -35,7 +35,6 @@ body {
 .sidenav a {
     margin: 20px 0 20px 20px;
     text-decoration: none;
-    font-family: arial, sans-serif;
     font-size: 14px;
     color: #069;
     display: block;
@@ -85,9 +84,9 @@ body {
 
 #add-project-btn {
     font-size: 14px;
+    font-family: 'Raleway', sans-serif;
     margin: 0 0 20px 20px;
     border: none;
-    font-family: arial, sans-serif;
     padding: 0!important;
     cursor: pointer;
     color: #069;
@@ -95,8 +94,8 @@ body {
 
 .add-task-btn {
     font-size: 14px;
+    font-family: 'Raleway', sans-serif;
     border: none;
-    font-family: arial, sans-serif;
     padding: 0!important;
     cursor: pointer;
     color: #069;
@@ -104,7 +103,7 @@ body {
 }
 
 .container { 
-    margin-left: 200px;
+    margin-left: 220px;
 }
 
 .dot {
