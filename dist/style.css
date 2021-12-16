@@ -144,6 +144,16 @@ table {
     width: 100%;
 }
 
-.center-td {
-    margin: auto;
+th {
+    border: black solid 2px;
+}
+
+.task-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.task-form div{
+    margin-top: 10px;
+    width: 100%;
 }
