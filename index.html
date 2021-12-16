@@ -36,10 +36,14 @@
         <div class="modal-content">
             <span class="task-close">&times;</span>
             <form class="task-form">
-                <label for="taskName">Task Name: </label>
-                <input type="text" name="taskName" id="taskName">
-                <label for="dueDate">Due Date: </label>
-                <input type="date" name="dueDate" id="dueDate">
+                <div>
+                    <label for="taskName">Task Name: </label>
+                    <input type="text" name="taskName" id="taskName">
+                </div>
+                <div>
+                    <label for="dueDate">Due Date: </label>
+                    <input type="date" name="dueDate" id="dueDate">
+                </div>
                 <div>
                     <label for="priority">Priority: </label>
                     <input type="radio" name="priority" id="priorityChoice1" value="1" checked>
@@ -49,7 +53,9 @@
                     <input type="radio" name="priority" id="priorityChoice3" value="3">
                     <label for="priorityChoice3">3</label>
                 </div>
-                <button id="submit-task-btn">Submit</button>
+                <div>
+                    <button id="submit-task-btn">Submit</button>
+                </div>
             </form>
         </div> 
     </div>
