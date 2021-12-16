@@ -1,5 +1,7 @@
 const ProjectList = (projects) => {
-    const addProject = (project) => projects.push(project);
+    const addProject = (project) => { 
+        projects.push(project);
+    }
 
     return { projects, addProject };
 }

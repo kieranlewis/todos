@@ -1,7 +1,7 @@
 import Project from './Project';
 import ProjectList from './ProjectList';
 import Task from './Task';
-import { format, isValid } from 'date-fns';
+import { format } from 'date-fns';
 
 const projectForm = document.querySelector('#form-container');
 const taskForm = document.querySelector('#task-container');
