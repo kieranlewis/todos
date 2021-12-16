@@ -75,7 +75,7 @@ const displayTasks = (tasks) => {
     const th3 = document.createElement('th');
 
     th1.innerText = 'Title';
-    th2.innerText = 'Due Date (dd-mm-yyyy)';
+    th2.innerText = 'Due Date';
     th3.innerText = 'Priority'
 
     tr.appendChild(th1);
@@ -108,6 +108,7 @@ const displayTasks = (tasks) => {
         });
 
         const deleteButton = document.createElement('button');
+        deleteButton.classList.add('delete-btn');
         deleteButton.innerText = 'Delete';
         deleteButton.addEventListener('click', () => {
             currentProject.deleteTask(i);

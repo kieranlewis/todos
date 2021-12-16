@@ -33,7 +33,7 @@ body {
 }
 
 .sidenav a {
-    margin: 20px 0 20px 20px;
+    margin: 20px 20px 20px 20px;
     text-decoration: none;
     font-size: 14px;
     color: #069;
@@ -71,6 +71,7 @@ body {
     font-weight: bold;
     color: #aaaa;
     float: right;
+    margin: -20px -10px 0 0;
 }
 
 .close:hover,
@@ -100,6 +101,7 @@ body {
     cursor: pointer;
     color: #069;
     background-color: white;
+    margin-top: 5px;
 }
 
 .container { 
@@ -124,4 +126,20 @@ body {
 
 .red {
     background-color: red;
+}
+
+.delete-btn, #submit-btn, #submit-task-btn {
+    font-family: 'Raleway', sans-serif;
+}
+
+#projectName {
+    width: 74%;
+}
+
+.project-form {
+    margin: auto;
+}
+
+table {
+    width: 100%;
 }
